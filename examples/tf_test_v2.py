@@ -43,17 +43,17 @@ def test_step(images, labels):
   test_loss(t_loss)
   test_accuracy(labels, predictions)
 EPOCHS = 5
-    for epoch in range(EPOCHS):
-        train_loss.reset_states()
-        train_accuracy.reset_states()
-        test_loss.reset_states()
-        test_accuracy.reset_states()
-        for images, labels in train_ds:
-            train_step(images, labels)
-        for test_images, test_labels in test_ds:
-            test_step(test_images, test_labels)
-        print(f'Epoch {epoch+1}, '
-             f'Loss: {train_loss.result()}, '
-             f'Accuracy: {train_accuracy.result() * 100},' 
-             f'Test loss: {test_loss.result()}, '
-             f'Test Accuracy: {test_accuracy.result() * 100}')
+for epoch in range(EPOCHS):
+    train_loss.reset_states()
+    train_accuracy.reset_states()
+    test_loss.reset_states()
+    test_accuracy.reset_states()
+    for images, labels in train_ds:
+        train_step(images, labels)
+    for test_images, test_labels in test_ds:
+        test_step(test_images, test_labels)
+    print(f'Epoch {epoch+1}, '
+         f'Loss: {train_loss.result()}, '
+         f'Accuracy: {train_accuracy.result() * 100},' 
+         f'Test loss: {test_loss.result()}, '
+         f'Test Accuracy: {test_accuracy.result() * 100}')
