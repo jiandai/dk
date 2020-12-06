@@ -55,5 +55,5 @@ EPOCHS = 5
         print(f'Epoch {epoch+1}, '
              f'Loss: {train_loss.result()}, '
              f'Accuracy: {train_accuracy.result() * 100},' 
-             f'Test loss: {test_loss.result()}, '\n",
+             f'Test loss: {test_loss.result()}, '
              f'Test Accuracy: {test_accuracy.result() * 100}')
