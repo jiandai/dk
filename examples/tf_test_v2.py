@@ -36,7 +36,7 @@ def train_step(images, labels):
   optimizer.apply_gradients(zip(gradients, model.trainable_variables))
   train_loss(loss)
   train_accuracy(labels, predictions)
-@tf.function\n",
+@tf.function
 def test_step(images, labels):
   predictions = model(images, training=False)
   t_loss = loss_object(labels, predictions)
